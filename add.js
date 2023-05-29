@@ -19,6 +19,10 @@ const add = (numbers) => {
     );
   }
 
+  if (numbers.some((number) => number > 1000)) {
+    numbers = numbers.filter((number) => number <= 1000);
+  }
+
   return numbers.reduce((total, number) => total + number, 0);
 };
 

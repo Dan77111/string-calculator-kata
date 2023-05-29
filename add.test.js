@@ -1,3 +1,4 @@
+const { describe } = require('node:test');
 const add = require('./add');
 
 describe('add - First Step', () => {
@@ -57,5 +58,17 @@ describe('add - Fifth Step', () => {
   });
   test('Somma stringa "//;\n1,-2" e si aspetta un eccezione', () => {
     expect(() => add('//;\n1;-2')).toThrow('negatives not allowed: -2');
+  });
+});
+
+describe('add - Sixth Step', () => {
+  test('Somma stringa "1,2,1001" e si aspetta 3', () => {
+    expect(add('1,2,1001')).toBe(3);
+  });
+  test('Somma stringa "//:\n1:2:1001:4" e si aspetta 10', () => {
+    expect(add('//:\n1:2:1001:4')).toBe(7);
+  });
+  test('Somma stringa "//*\n1*2\n1001\n4" e si aspetta 10', () => {
+    expect(add('//*\n1*2\n1001\n4')).toBe(7);
   });
 });
