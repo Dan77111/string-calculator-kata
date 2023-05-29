@@ -65,10 +65,10 @@ describe('add - ignorare i numeri >1000', () => {
   test('Somma stringa "1,2,1001" e si aspetta 3', () => {
     expect(add('1,2,1001')).toBe(3);
   });
-  test('Somma stringa "//:\n1:2:1001:4" e si aspetta 10', () => {
+  test('Somma stringa "//:\n1:2:1001:4" e si aspetta 7', () => {
     expect(add('//:\n1:2:1001:4')).toBe(7);
   });
-  test('Somma stringa "//*\n1*2\n1001\n4" e si aspetta 10', () => {
+  test('Somma stringa "//*\n1*2\n1001\n4" e si aspetta 7', () => {
     expect(add('//*\n1*2\n1001\n4')).toBe(7);
   });
 });
