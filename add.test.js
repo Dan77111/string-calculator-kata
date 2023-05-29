@@ -1,7 +1,7 @@
 const { describe } = require('node:test');
 const add = require('./add');
 
-describe('add - First Step', () => {
+describe('add - 0, 1 o 2 numeri', () => {
   test('Somma stringa vuota e si aspetta 0', () => {
     expect(add('')).toBe(0);
   });
@@ -13,7 +13,7 @@ describe('add - First Step', () => {
   });
 });
 
-describe('add - Second Step', () => {
+describe('add - numero arbitrario di numeri', () => {
   test('Somma stringa "1,2,3" e si aspetta 6', () => {
     expect(add('1,2,3')).toBe(6);
   });
@@ -25,7 +25,7 @@ describe('add - Second Step', () => {
   });
 });
 
-describe('add - Third Step', () => {
+describe('add - newline come separatore', () => {
   test('Somma stringa "1\n2,3" e si aspetta 6', () => {
     expect(add('1\n2,3')).toBe(6);
   });
@@ -37,7 +37,7 @@ describe('add - Third Step', () => {
   });
 });
 
-describe('add - Fourth Step', () => {
+describe('add - separatore personalizzato', () => {
   test('Somma stringa "//;\n1;2" e si aspetta 3', () => {
     expect(add('//;\n1;2')).toBe(3);
   });
@@ -49,7 +49,7 @@ describe('add - Fourth Step', () => {
   });
 });
 
-describe('add - Fifth Step', () => {
+describe('add - eccezioni per i numeri negativi', () => {
   test('Somma stringa "1,-2" e si aspetta un eccezione', () => {
     expect(() => add('1,-2')).toThrow('negatives not allowed: -2');
   });
@@ -61,7 +61,7 @@ describe('add - Fifth Step', () => {
   });
 });
 
-describe('add - Sixth Step', () => {
+describe('add - ignorare i numeri >1000', () => {
   test('Somma stringa "1,2,1001" e si aspetta 3', () => {
     expect(add('1,2,1001')).toBe(3);
   });
