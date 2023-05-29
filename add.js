@@ -12,6 +12,13 @@ const add = (numbers) => {
   regex = new RegExp(`[\n${delimiter}]`, 'g');
   numbers = numbers.split(regex);
   numbers = numbers.map((number) => parseInt(number) || 0);
+
+  if (numbers.some((number) => number < 0)) {
+    throw new Error(
+      'negatives not allowed: ' + numbers.filter((number) => number < 0).join(',')
+    );
+  }
+
   return numbers.reduce((total, number) => total + number, 0);
 };
 
